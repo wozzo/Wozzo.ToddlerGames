@@ -1,0 +1,43 @@
+<HTML>
+<head>
+<style>
+button{
+    background-color: orange; /* Green */
+    border: none;
+    border-radius: 40px;
+    color: white;
+    padding: 12px 12px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;    
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+
+body {
+    background-color: black;
+}
+</style>
+</head>
+<body>
+<button>Click me!</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    $("button").on({
+        mouseover:function(){
+            $(this).css({
+                left:(Math.random()*($(window).width() - 80))+"px",
+                top:(Math.random()*($(window).height() - 80))+"px",
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>

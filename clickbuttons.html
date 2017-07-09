@@ -1,0 +1,49 @@
+<HTML>
+<head>
+<style>
+button{
+    background-color: orange; /* Green */
+    border: none;
+    border-radius: 40px;
+    color: white;
+    margin: 100px;
+    padding: 12px 12px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;    
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+body {
+    background-color: black;
+}
+</style>
+</head>
+<body>
+<div class="buttons"></div>>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    var $buttons = $(".buttons");
+    $buttons.css({
+        display: "flex",
+        "flex-wrap": "wrap"    
+    });
+    for (var i = 0; i < 20; i++)
+    {
+        $buttons.append($("<button>Click me!</button>"))
+    }
+
+    $("button").on("click", function(){
+        $(this).css({visibility: "hidden"});
+    });
+});
+</script>
+</body>
+</html>
