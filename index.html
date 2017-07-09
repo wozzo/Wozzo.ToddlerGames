@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Toddler Mouse Games</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+    </head>
+    <body>
+        <button data-game="chasebutton">Chase the mouse</button>
+        <button data-game="clickbuttons">Click the grid</button>
+        <button data-game="randomclickbuttons">Click the buttons</button>
+        <iframe webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts/jquery.fullscreen-min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var $iframe = $("iframe");
+
+        $("button").on("click", function(){
+            var game = $(this).data("game");
+            $iframe.attr("src", game + ".html");
+            $iframe.fullScreen(true);
+        });
+    });
+    </script>
+</html>
